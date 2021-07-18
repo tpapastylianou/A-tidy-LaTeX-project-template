@@ -1,33 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % OVERVIEW OF COMMANDS AND MACROS DEFINED IN THIS FILE
 %
-%
-% ** Eirini's corner **
-%
-%    \Note : Highlights with red colour     - indicates standard note by author
-%
-%    \RP   : Highlights with magenta colour - reserved for notes by Riccardo
-%    \LC   : Highlights with blue colour    - reserved for notes by Luca
-%    \EC   : Highlights with cyan colour    - reserved for notes by Eirini
-%    \TP   : Highlights with green colour   - reserved for notes by Tasos
-%
-%    \markasold : Highlights with yellow colour  - indicates `old' or `outdated' material
-%
-%
-% ** Luca's corner **
-%
-%    \Future  : Defines the symbol to be used (in maths mode) to denote `future' observations
-%    \Other   : Defines the symbol to be used (in maths mode) to denote `other' observations
-%    \TR      : The transpose operator
-%    \RV      : A Bold x
-%    \ParamsQ : A bold beta parameter
-%    \Q       : A q_beta symbol
-%
-%    \beginsupplement: 
-%
-%
-% ** Tasos's big messy pile **
-%
 % Colour text markers allowing optional comments, for editing purposes; should not appear in final article
 %    \cn        : '[citation(s) needed]' marker
 %    \todo      : 'TODO' marker
@@ -52,45 +25,13 @@
 %    \mccorrection  :  (environment): Similar to markChanges, but highlights an entire block.
 %
 % Other miscellaneous shorcuts and utilities
-%    \nevermind        :  Types Nevermind in a consistent style
+%    \abbr             :  Tooltip and reference abbreviations appropriately
 %    \etal             :  Shortcut to type et al. in italics
 %    \citeWithTooltip  :  Citations with added mouse-hover tooltip functionality, to allow easy inspection of cited paper at the point of insertion
 %    \ccite            :  Quick shortcut to the \citeWithTooltip one above, making citations display their bibtex key on mouse hovering
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-% Eirini's corner:
-  \newcommand{\Note}[1]{{\color{red}\bfseries[NOTE: #1]}}
-  %\renewcommand{\Note}[1]{} % Uncomment this to disable comments
-  \newcommand{\markasold}[1]{\hl{#1}}
-  \newcommand{\RP}[1]{{\color{magenta}\bfseries[RP: #1]}}
-  \newcommand{\LC}[1]{{\color{blue}\bfseries[LC: #1]}}
-  \newcommand{\EC}[1]{{\color{cyan}\bfseries[EC: #1]}}
-  \newcommand{\TP}[1]{{\color{green}\bfseries[TP: #1]}}
-
-
-% Luca's corner:
-  \newcommand{\Future}{^+} % future observations
-  \newcommand{\Other}{_{\bar s}} % other subjects
-  \newcommand{\TR}{^{\!\mathsf T}}
-  \newcommand{\RV}{\mathbf x}
-  \newcommand{\ParamsQ}{\boldsymbol{\beta}}
-  \newcommand{\Q}{q}
-  \newcommand{\QBeta}{\Q_{\mbox{\tiny$\ParamsQ$}}}
-
-	\newcommand{\beginsupplement}{%
-		\setcounter{table}{0}
-		\renewcommand{\thetable}{S\arabic{table}}%
-		\setcounter{figure}{0}
-		\renewcommand{\thefigure}{S\arabic{figure}}%
-	}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Tasos's big messy pile
-%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Mark / highlight changes from last revision.
   \newcommand{\markChanges}[1]{{\sethlcolor{lightblue}\hl{#1}}}
