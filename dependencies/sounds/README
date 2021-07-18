@@ -1,0 +1,2 @@
+This directory contains soundfiles, which are intended for use by the compilation script (rather than the latex document itself).
+Their role is to audibly signify success or failure during compilation.

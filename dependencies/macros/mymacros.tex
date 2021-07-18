@@ -1,0 +1,156 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OVERVIEW OF COMMANDS AND MACROS DEFINED IN THIS FILE
+%
+%
+% ** Eirini's corner **
+%
+%    \Note : Highlights with red colour     - indicates standard note by author
+%
+%    \RP   : Highlights with magenta colour - reserved for notes by Riccardo
+%    \LC   : Highlights with blue colour    - reserved for notes by Luca
+%    \EC   : Highlights with cyan colour    - reserved for notes by Eirini
+%    \TP   : Highlights with green colour   - reserved for notes by Tasos
+%
+%    \markasold : Highlights with yellow colour  - indicates `old' or `outdated' material
+%
+%
+% ** Luca's corner **
+%
+%    \Future  : Defines the symbol to be used (in maths mode) to denote `future' observations
+%    \Other   : Defines the symbol to be used (in maths mode) to denote `other' observations
+%    \TR      : The transpose operator
+%    \RV      : A Bold x
+%    \ParamsQ : A bold beta parameter
+%    \Q       : A q_beta symbol
+%
+%    \beginsupplement: 
+%
+%
+% ** Tasos's big messy pile **
+%
+% Colour text markers allowing optional comments, for editing purposes; should not appear in final article
+%    \cn        : '[citation(s) needed]' marker
+%    \todo      : 'TODO' marker
+%    \TODO      : `TODO' marker, Big block version; helpful in denoting whole section
+%    \fixme     : 'FIXME' marker
+%    \rephrase  :  `REPHRASE' marker
+%    \tbc       :  'TO BE COMPLETED' marker
+%    \confirm   :  'CONFIRM' marker
+%    \consider  :  `CONSIDER' marker (typically only useful with an optional argument provided)
+%
+% Formatting markers, used to denote different editing contexts
+%    \markChanges  :  Highlights with light blue to indicated where changes have occured (for revision purposes)
+%    \markAccepted :  Highlights with light green to indicate changes that were 'accepted' (for confirmation) since last review.
+%    \del          :  Colours excerpt in a light gray colour, for marking text as a temporary placeholder, or more generally marked for deletion.
+%    \notes        :  Typeface active section in calligraphic font to mark as notes; useful when used as a scratchpad at end of document
+%
+% Togglable markers, used for revision purposes. Toggled with \correctionstrue or \correctionsfalse as appropriate in main document
+%    \mccorrect     :  Highlights with light blue to indicated where changes have occured (for revision purposes)
+%    \mccontext     :  Provide context for a passage, e.g. for signposting corrections made; inserts a custom note at the margin
+%    \rmcontext     :  Inserts a red custom note at the margin to allow marking / explaining a deletion since last review.
+%    \accontext     :  Inserts a green custom note at the margin to allow marking / explaining an accepted change since last review
+%    \mccorrection  :  (environment): Similar to markChanges, but highlights an entire block.
+%
+% Other miscellaneous shorcuts and utilities
+%    \nevermind        :  Types Nevermind in a consistent style
+%    \etal             :  Shortcut to type et al. in italics
+%    \citeWithTooltip  :  Citations with added mouse-hover tooltip functionality, to allow easy inspection of cited paper at the point of insertion
+%    \ccite            :  Quick shortcut to the \citeWithTooltip one above, making citations display their bibtex key on mouse hovering
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Eirini's corner:
+  \newcommand{\Note}[1]{{\color{red}\bfseries[NOTE: #1]}}
+  %\renewcommand{\Note}[1]{} % Uncomment this to disable comments
+  \newcommand{\markasold}[1]{\hl{#1}}
+  \newcommand{\RP}[1]{{\color{magenta}\bfseries[RP: #1]}}
+  \newcommand{\LC}[1]{{\color{blue}\bfseries[LC: #1]}}
+  \newcommand{\EC}[1]{{\color{cyan}\bfseries[EC: #1]}}
+  \newcommand{\TP}[1]{{\color{green}\bfseries[TP: #1]}}
+
+
+% Luca's corner:
+  \newcommand{\Future}{^+} % future observations
+  \newcommand{\Other}{_{\bar s}} % other subjects
+  \newcommand{\TR}{^{\!\mathsf T}}
+  \newcommand{\RV}{\mathbf x}
+  \newcommand{\ParamsQ}{\boldsymbol{\beta}}
+  \newcommand{\Q}{q}
+  \newcommand{\QBeta}{\Q_{\mbox{\tiny$\ParamsQ$}}}
+
+	\newcommand{\beginsupplement}{%
+		\setcounter{table}{0}
+		\renewcommand{\thetable}{S\arabic{table}}%
+		\setcounter{figure}{0}
+		\renewcommand{\thefigure}{S\arabic{figure}}%
+	}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Tasos's big messy pile
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Mark / highlight changes from last revision.
+  \newcommand{\markChanges}[1]{{\sethlcolor{lightblue}\hl{#1}}}
+  \newcommand{\markAccepted}[1]{{\sethlcolor{lightgreen}\hl{#1}}}
+
+% '[citation needed]' marker with optional comment; for editing purposes, should not appear in final article
+  \newcommand{\cn}[1][]{{\sethlcolor{crayonblue}\color{white}\hl{\textbf{[citation(s)~needed]}}}{\sethlcolor{lightcrayonblue}\color{darkgray}\hl{#1}}}
+  
+% 'TODO' marker with optional comment; for editing purposes, should not appear in final article
+  \newcommand{\todo}[1][]{{\sethlcolor{orange}\color{white}\hl{\textbf{[TODO]}}}{\sethlcolor{lightorange}\color{darkgray}\hl{#1}}}
+
+% Big block version
+  \newcommand{\TODO}[1][]{{\sethlcolor{orange}\hypersetup{urlcolor=white}\href{TODO: #1}{\begin{center}\hl{\textbf{***************************}}\\\hl{\textbf{********** TODO **********}}\\\hl{\textbf{***************************}}\end{center}~}}}
+
+% 'FIXME' marker with optional comment; for editing purposes, should not appear in final article
+  \newcommand{\fixme}[1][]{{\sethlcolor{red}\color{white}\hl{\textbf{[FIXME]}}}{\sethlcolor{lightred}\color{darkgray}\hl{#1}}}
+
+% 'REPHRASE' marker with optional comment; for editing purposes, should not appear in final article
+  \newcommand{\rephrase}[1][]{{\sethlcolor{darkcyan}\color{white}\hl{\textbf{[REPHRASE?]}}}{\sethlcolor {lightcyan}\color{darkgray}\hl{#1}}}
+
+% 'TO BE COMPLETED' marker with optional comment; for editing purposes, should not appear in final article
+  \newcommand{\tbc}[1][]{{\sethlcolor{darkpurple}\color{white}\hl{\textbf{[TO BE COMPLETED... ]}}}{\sethlcolor {lightpurple}\color{darkgray}\hl{#1}}}
+
+% 'CONFIRM' marker with optional comment; for editing purposes, should not appear in final article
+  \newcommand{\confirm}[1][]{{\sethlcolor{darkviolet}\color{white}\hl{\textbf{[CONFIRM!]}}}{\sethlcolor {lightviolet}\color{darkgray}\hl{#1}}}
+
+% `CONSIDER' marker
+  \newcommand{\consider}[1][]{{\sethlcolor{darkgreen}\color{white}\hl{\textbf{[CONSIDER:]}}}{\sethlcolor {lightgreen}\color{darkgray}\hl{#1}}}
+
+% Citations with added hover tooltip
+  \newcommand{\citeWithTooltip}[2][(unspecified)]{\href{citation: #1}{\cite{#2}}}
+  \newcommand{\ccite}[1]{\citeWithTooltip[#1]{#1}} % quick shortcut to show bibtex key
+
+% Tooltip and reference abbreviations appropriately
+  \newcommand{\abbr}[2]{{\hypersetup{urlcolor=black}\href{abbr: #2}{\dotuline{#1}}}}
+
+% Shortcut to type et al. in italics
+  \newcommand{\etal}{\emph{et al.}}
+
+% Typeface active section in calligraphic font to mark as notes
+  \newcommand{\notes}{\fontfamily{pzc}\fontsize{13pt}{1em}\selectfont\color{gray}} 
+
+% Colour marked-for-deletion excerpt in a light gray colour. These will be considered for deletion in case of too much text
+  \newcommand{\del}[1]{{\color{cyan}#1}} 
+
+% Togglable corrections. Use \correctionstrue in document to enable
+  \newif\ifcorrections
+  \correctionsfalse
+  \colorlet{shadecolor}{blue!20}
+%  \OuterFrameSep=-9pt
+  \newenvironment{mccorrection}
+  {\ifcorrections\begin{shaded}\fi}
+  {\ifcorrections\end{shaded}\fi}
+  \sethlcolor{shadecolor}
+  \newcommand{\mccorrect}[1]{\ifcorrections\hl{#1}\else#1\fi}
+
+% Provide context, e.g. for corrections; inserts a custom note at the margin next to the highlighted box. Place directly
+% before the intended passage (a page break may also be needed before an environment
+%\reversemarginpar % required once to shift the margin location to the wide margin
+  \marginparwidth=3.75em
+  \newcommand{\mccontext}[1]{\ifcorrections\marginpar{\vspace{0.25em}\fontfamily{pzc}\fontsize{0.9em}{0.9em}\selectfont\parbox{4em}{\begin{shaded}\hyphenpenalty=0 #1\end{shaded} \par}}\fi}
+  \newcommand{\rmcontext}[1]{\ifcorrections\marginpar{\vspace{0.25em}\fontfamily{pzc}\fontsize{0.9em}{0.9em}\selectfont\parbox{4em}{\colorlet{shadecolor}{lightred}\begin{shaded}\hyphenpenalty=0 #1\end{shaded} \par}}\fi}
+  \newcommand{\accontext}[1]{\ifcorrections\marginpar{\vspace{0.25em}\fontfamily{pzc}\fontsize{0.9em}{0.9em}\selectfont\parbox{4em}{\colorlet{shadecolor}{lightgreen}\begin{shaded}\hyphenpenalty=0 #1\end{shaded} \par}}\fi}

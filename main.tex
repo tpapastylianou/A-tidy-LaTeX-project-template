@@ -1,0 +1,78 @@
+\documentclass{dependencies/styles/IEEEtran}
+
+% Import required packages, configurations, and defined macros.
+\input{dependencies/include/package_import_and_configuration_statements}
+\input{dependencies/macros/mymacros}
+
+
+%
+% --- Main document ---
+%
+
+\title { A tidy latex project template }
+\author{ Tasos Papastylianou }
+
+\begin{document}
+  
+  \maketitle
+  
+  \begin{abstract}
+    This is an example document which makes use of the tidy latex project template.
+  \end{abstract}
+
+  \section{Introduction}
+
+    Working with, and compiling \LaTeX documents can get very messy. Most people tend to dump all their files in a single folder, which then gets even more messy as the pdflatex command generates a variety of intermediate files required by the pdflatex compiler.
+
+    This project template separates the various components of a latex project into their respective folders in a tidy manner, while also providing an example compilation script (for bash-supporting systems) that can compile everything as appropriate and then clean up any intermediate files.
+
+    Each folder contains an example file and a README.md file containing information on how to use that folder. Feel free to explore.
+
+  \section{Example use}
+
+    This short sample document contains examples of how one might use this template, to link to externally defined equations, tables and figures.
+    
+    \subsection{ Equations }
+
+      Display equations, by creating an 'equation' environment in this main document, and within it, redirect to the relevant equation file
+      containing only the actual definition of your mathematical equation:
+
+      \begin{equation}
+         \label{eq:ExampeEquation}
+         \input{resources/equations/ExampleEquation}
+      \end{equation}
+
+    \subsection{ Figures }
+
+      Display figures by creating your 'floating' environment (e.g. via the graphicx package's includefigure command), and importing your figure file directly within it:
+
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=1\linewidth]{resources/figures/duckbunny}
+        \caption{A duck. Or is it a bunny?}
+        \label{fig:duckbunny}
+      \end{figure}
+
+    \subsection{ Tables }
+
+      Place tables in your document by creating your 'table' environment, and importing your table file (a normal .tex file containing a 'tabular' definition) directly within:
+
+    \begin{table}[h]
+      \caption{An example table}
+      \centering
+      \input{resources/tables/ExampleTable}
+      \label{tab:ExampleTable}
+    \end{table}
+
+    \subsection{ Bibliography and Citations }
+
+      Use citations as normal (\cite{Papastylianou2021}). Link to your bibliography file(s) directly in the bibliography section.
+
+  %
+  % ---- Bibliography ----
+  %
+
+  \bibliographystyle{dependencies/styles/IEEEtran}
+  \bibliography{resources/bibliography/ExampleBibliography}
+
+\end{document}
